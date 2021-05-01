@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8453E930263D7EDF00101DDE /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E92F263D7EDF00101DDE /* CalendarCollectionViewCell.swift */; };
+		8453E935263DA75300101DDE /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E934263DA75300101DDE /* CalendarHelper.swift */; };
 		8462486E263D60B100C8FDE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462486D263D60B100C8FDE9 /* AppDelegate.swift */; };
 		84624870263D60B100C8FDE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462486F263D60B100C8FDE9 /* SceneDelegate.swift */; };
-		84624872263D60B100C8FDE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84624871263D60B100C8FDE9 /* ViewController.swift */; };
+		84624872263D60B100C8FDE9 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84624871263D60B100C8FDE9 /* TaskViewController.swift */; };
 		84624875263D60B100C8FDE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84624873263D60B100C8FDE9 /* Main.storyboard */; };
 		84624877263D60B500C8FDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84624876263D60B500C8FDE9 /* Assets.xcassets */; };
 		8462487A263D60B500C8FDE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84624878263D60B500C8FDE9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8453E92F263D7EDF00101DDE /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		8453E934263DA75300101DDE /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		8462486A263D60B100C8FDE9 /* ToDoAppTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoAppTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8462486D263D60B100C8FDE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8462486F263D60B100C8FDE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84624871263D60B100C8FDE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84624871263D60B100C8FDE9 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		84624874263D60B100C8FDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84624876263D60B500C8FDE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84624879263D60B500C8FDE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8453E92D263D7EA400101DDE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8453E92F263D7EDF00101DDE /* CalendarCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8453E933263D871300101DDE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8453E934263DA75300101DDE /* CalendarHelper.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		84624861263D60B100C8FDE9 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +76,57 @@
 		8462486C263D60B100C8FDE9 /* ToDoAppTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				8462486D263D60B100C8FDE9 /* AppDelegate.swift */,
-				8462486F263D60B100C8FDE9 /* SceneDelegate.swift */,
-				84624871263D60B100C8FDE9 /* ViewController.swift */,
-				84624873263D60B100C8FDE9 /* Main.storyboard */,
+				84624887263D63C500C8FDE9 /* App */,
+				84624884263D639200C8FDE9 /* Model */,
+				84624885263D63A000C8FDE9 /* View */,
+				84624886263D63AF00C8FDE9 /* Controllers */,
+				8453E933263D871300101DDE /* Services */,
 				84624876263D60B500C8FDE9 /* Assets.xcassets */,
-				84624878263D60B500C8FDE9 /* LaunchScreen.storyboard */,
 				8462487B263D60B500C8FDE9 /* Info.plist */,
 			);
 			path = ToDoAppTestTask;
+			sourceTree = "<group>";
+		};
+		84624884263D639200C8FDE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84624885263D63A000C8FDE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8453E92D263D7EA400101DDE /* Cell */,
+				84624889263D63DD00C8FDE9 /* Storyboards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84624886263D63AF00C8FDE9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84624871263D60B100C8FDE9 /* TaskViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84624887263D63C500C8FDE9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8462486D263D60B100C8FDE9 /* AppDelegate.swift */,
+				8462486F263D60B100C8FDE9 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		84624889263D63DD00C8FDE9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				84624873263D60B100C8FDE9 /* Main.storyboard */,
+				84624878263D60B500C8FDE9 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84624872263D60B100C8FDE9 /* ViewController.swift in Sources */,
+				8453E930263D7EDF00101DDE /* CalendarCollectionViewCell.swift in Sources */,
+				84624872263D60B100C8FDE9 /* TaskViewController.swift in Sources */,
 				8462486E263D60B100C8FDE9 /* AppDelegate.swift in Sources */,
 				84624870263D60B100C8FDE9 /* SceneDelegate.swift in Sources */,
+				8453E935263DA75300101DDE /* CalendarHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -289,6 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DZ3AVXR7W;
 				INFOPLIST_FILE = ToDoAppTestTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = IPV.ToDoAppTestTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DZ3AVXR7W;
 				INFOPLIST_FILE = ToDoAppTestTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = IPV.ToDoAppTestTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
