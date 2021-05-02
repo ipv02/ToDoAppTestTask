@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8453E930263D7EDF00101DDE /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E92F263D7EDF00101DDE /* CalendarCollectionViewCell.swift */; };
 		8453E935263DA75300101DDE /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E934263DA75300101DDE /* CalendarHelper.swift */; };
+		8453E93B263DCE5F00101DDE /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E93A263DCE5F00101DDE /* Task.swift */; };
+		8453E93F263DD25800101DDE /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E93E263DD25800101DDE /* Bundle.swift */; };
+		8453E94B263DF81100101DDE /* taskData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8453E94A263DF81100101DDE /* taskData.json */; };
+		8453E94F263EB72C00101DDE /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E94E263EB72C00101DDE /* TaskTableViewCell.swift */; };
 		8462486E263D60B100C8FDE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462486D263D60B100C8FDE9 /* AppDelegate.swift */; };
 		84624870263D60B100C8FDE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462486F263D60B100C8FDE9 /* SceneDelegate.swift */; };
 		84624872263D60B100C8FDE9 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84624871263D60B100C8FDE9 /* TaskViewController.swift */; };
@@ -20,6 +24,10 @@
 /* Begin PBXFileReference section */
 		8453E92F263D7EDF00101DDE /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		8453E934263DA75300101DDE /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		8453E93A263DCE5F00101DDE /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		8453E93E263DD25800101DDE /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		8453E94A263DF81100101DDE /* taskData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = taskData.json; sourceTree = "<group>"; };
+		8453E94E263EB72C00101DDE /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		8462486A263D60B100C8FDE9 /* ToDoAppTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoAppTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8462486D263D60B100C8FDE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8462486F263D60B100C8FDE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				8453E92F263D7EDF00101DDE /* CalendarCollectionViewCell.swift */,
+				8453E94E263EB72C00101DDE /* TaskTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -55,6 +64,14 @@
 				8453E934263DA75300101DDE /* CalendarHelper.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8453E945263DF04700101DDE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8453E93E263DD25800101DDE /* Bundle.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		84624861263D60B100C8FDE9 = {
@@ -81,8 +98,10 @@
 				84624885263D63A000C8FDE9 /* View */,
 				84624886263D63AF00C8FDE9 /* Controllers */,
 				8453E933263D871300101DDE /* Services */,
+				8453E945263DF04700101DDE /* Extension */,
 				84624876263D60B500C8FDE9 /* Assets.xcassets */,
 				8462487B263D60B500C8FDE9 /* Info.plist */,
+				8453E94A263DF81100101DDE /* taskData.json */,
 			);
 			path = ToDoAppTestTask;
 			sourceTree = "<group>";
@@ -90,6 +109,7 @@
 		84624884263D639200C8FDE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8453E93A263DCE5F00101DDE /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +208,7 @@
 			files = (
 				8462487A263D60B500C8FDE9 /* LaunchScreen.storyboard in Resources */,
 				84624877263D60B500C8FDE9 /* Assets.xcassets in Resources */,
+				8453E94B263DF81100101DDE /* taskData.json in Resources */,
 				84624875263D60B100C8FDE9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,10 +220,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8453E94F263EB72C00101DDE /* TaskTableViewCell.swift in Sources */,
 				8453E930263D7EDF00101DDE /* CalendarCollectionViewCell.swift in Sources */,
+				8453E93F263DD25800101DDE /* Bundle.swift in Sources */,
 				84624872263D60B100C8FDE9 /* TaskViewController.swift in Sources */,
 				8462486E263D60B100C8FDE9 /* AppDelegate.swift in Sources */,
 				84624870263D60B100C8FDE9 /* SceneDelegate.swift in Sources */,
+				8453E93B263DCE5F00101DDE /* Task.swift in Sources */,
 				8453E935263DA75300101DDE /* CalendarHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

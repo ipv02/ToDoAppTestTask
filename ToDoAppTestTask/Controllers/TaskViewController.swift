@@ -5,22 +5,28 @@ class TaskViewController: UIViewController {
     
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     private let calendarHelper = CalendarHelper()
     private var selectedDate = Date()
     private var totalSquares: [String] = []
+    
+    let task = Bundle.main.decode(Task.self, from: "taskData.json")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        //collectionView.backgroundColor = .lightGray
-        //collectionView.layer.borderWidth = 1
-        //collectionView.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        collectionView.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         setCellsView()
         setMonthView()
+        
+        print(task.name)
     }
     
     override var shouldAutorotate: Bool {
@@ -56,8 +62,8 @@ class TaskViewController: UIViewController {
         monthLabel.text = calendarHelper.monthString(date: selectedDate) + " " + calendarHelper.yearsString(date: selectedDate)
         collectionView.reloadData()
     }
-
-
+    
+    
     @IBAction func previousMonthButton(_ sender: Any) {
         selectedDate = calendarHelper.minusMonth(date: selectedDate)
         setMonthView()
@@ -87,5 +93,34 @@ extension TaskViewController: UICollectionViewDataSource {
 }
 
 extension TaskViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionView.cellForItem(at: indexPath)
+        selectedCell?.contentView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cellToDeselect = collectionView.cellForItem(at: indexPath)
+        cellToDeselect?.contentView.backgroundColor = UIColor.clear
+    }
+}
+
+//MARK: - UITableView DataSource & Delegate
+extension TaskViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskTableViewCell
+        
+        cell.textLabel?.text = "Task"
+        cell.detailTextLabel?.text = "13:00 - 14:00"
+        cell.accessoryType = .disclosureIndicator
+        
+        return cell
+    }
+}
+
+extension TaskViewController: UITableViewDelegate {
     
 }
