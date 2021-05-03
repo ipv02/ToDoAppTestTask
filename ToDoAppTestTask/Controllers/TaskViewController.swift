@@ -8,29 +8,46 @@ class TaskViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private let calendarHelper = CalendarHelper()
+    private let hours = Hours.getHours()
+    private let dateConverter = DateConverter.shared
+    private let task = Bundle.main.decode(Task.self, from: "TaskData.json")
+        
     private var selectedDate = Date()
     private var totalSquares: [String] = []
-    
-    let task = Bundle.main.decode(Task.self, from: "taskData.json")
+    private var fetchDataTask: Task?
+    private var theRightDay: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        //collectionView.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         
         tableView.delegate = self
         tableView.dataSource = self
         
         setCellsView()
         setMonthView()
-        
-        print(task.name)
     }
     
     override var shouldAutorotate: Bool {
         return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let hour = hours[indexPath.row]
+        
+        guard let detailsVC = segue.destination as? DetailsViewController else { return }
+        let timeStart = dateConverter.getTaskHour(unixCode: Double(task.dateStart) ?? 0.0)
+        
+        if hour == timeStart {
+            detailsVC.detailsTask = fetchDataTask
+        } else {
+            detailsVC.tableViewHour = hour
+        }
     }
     
     private func setCellsView() {
@@ -42,7 +59,7 @@ class TaskViewController: UIViewController {
         flowLayout.itemSize = CGSize(width: width, height: height)
     }
     
-    func setMonthView() {
+   private func setMonthView() {
         totalSquares.removeAll()
         let daysInMonth = calendarHelper.daysInMonth(date: selectedDate)
         let firstDayOfMonth = calendarHelper.firstOfMonth(date: selectedDate)
@@ -88,14 +105,23 @@ extension TaskViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 extension TaskViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath)
         selectedCell?.contentView.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        
+        let dateDay = totalSquares[indexPath.item]
+        
+        let dayTask = dateConverter.getTaskDay(unixCode: Double(task.dateStart) ?? 0.0)
+        
+        if dateDay == dayTask {
+            theRightDay = dateDay
+            fetchDataTask = task
+            tableView.reloadData()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -106,15 +132,27 @@ extension TaskViewController: UICollectionViewDelegate {
 
 //MARK: - UITableView DataSource & Delegate
 extension TaskViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        hours.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         
-        cell.textLabel?.text = "Task"
-        cell.detailTextLabel?.text = "13:00 - 14:00"
+        let hour = hours[indexPath.row]
+        let timeStart = dateConverter.getTaskHour(unixCode: Double(task.dateStart) ?? 0.0)
+        let timeFinish = dateConverter.getTaskHour(unixCode: Double(task.dateFinish) ?? 0.0)
+        let dayTask = dateConverter.getTaskDay(unixCode: Double(task.dateStart) ?? 0.0)
+        
+        if theRightDay == dayTask && hour == timeStart {
+            cell.textLabel?.text = fetchDataTask?.name
+            cell.detailTextLabel?.text = timeStart + "-" + timeFinish
+        } else {
+            cell.textLabel?.text = ""
+            cell.detailTextLabel?.text = hour
+        }
+        
         cell.accessoryType = .disclosureIndicator
         
         return cell
@@ -123,4 +161,11 @@ extension TaskViewController: UITableViewDataSource {
 
 extension TaskViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+//        let hour = hours[indexPath.row]
+//        performSegue(withIdentifier: "showDetails", sender: hour)
+        
+        
+    }
 }

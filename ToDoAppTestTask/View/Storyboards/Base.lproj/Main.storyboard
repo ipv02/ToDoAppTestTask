@@ -131,7 +131,7 @@
                                 <rect key="frame" x="0.0" y="340.5" width="375" height="326.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" textLabel="6Ep-oo-m2q" detailTextLabel="fmW-SR-BK8" style="IBUITableViewCellStyleSubtitle" id="ORB-Pi-kOS" customClass="TaskTableViewCell" customModule="ToDoAppTestTask" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" textLabel="6Ep-oo-m2q" detailTextLabel="fmW-SR-BK8" style="IBUITableViewCellStyleSubtitle" id="ORB-Pi-kOS">
                                         <rect key="frame" x="0.0" y="28" width="375" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ORB-Pi-kOS" id="ykK-l2-6Rd">
@@ -154,6 +154,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="lQr-tR-wJB" kind="show" identifier="showDetails" id="oJ0-eV-RSc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -192,6 +195,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="576.79999999999995" y="59.820089955022496"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="agj-ZZ-Iyi">
+            <objects>
+                <viewController id="lQr-tR-wJB" customClass="DetailsViewController" customModule="ToDoAppTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="idX-md-v4d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sp0-Se-k84">
+                                <rect key="frame" x="50" y="154" width="275" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ncn-Pa-Wba"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beo-HY-9zp">
+                                <rect key="frame" x="50" y="204" width="275" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ezv-K4-rPt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvM-7W-00n">
+                                <rect key="frame" x="132.5" y="104" width="110.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="w71-ZK-IZw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QUa-VG-Hi2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QUa-VG-Hi2" firstAttribute="trailing" secondItem="Sp0-Se-k84" secondAttribute="trailing" constant="50" id="6bG-KU-7eX"/>
+                            <constraint firstItem="Sp0-Se-k84" firstAttribute="top" secondItem="lvM-7W-00n" secondAttribute="bottom" constant="20" id="9f1-Ku-O37"/>
+                            <constraint firstItem="QUa-VG-Hi2" firstAttribute="trailing" secondItem="beo-HY-9zp" secondAttribute="trailing" constant="50" id="LJb-gN-oV3"/>
+                            <constraint firstItem="beo-HY-9zp" firstAttribute="top" secondItem="Sp0-Se-k84" secondAttribute="bottom" constant="20" id="Mtq-AT-uXN"/>
+                            <constraint firstItem="lvM-7W-00n" firstAttribute="centerX" secondItem="idX-md-v4d" secondAttribute="centerX" id="Y63-7j-0Vi"/>
+                            <constraint firstItem="Sp0-Se-k84" firstAttribute="leading" secondItem="QUa-VG-Hi2" secondAttribute="leading" constant="50" id="kRZ-hE-2i3"/>
+                            <constraint firstItem="lvM-7W-00n" firstAttribute="top" secondItem="QUa-VG-Hi2" secondAttribute="top" constant="60" id="te0-2h-lEa"/>
+                            <constraint firstItem="beo-HY-9zp" firstAttribute="leading" secondItem="QUa-VG-Hi2" secondAttribute="leading" constant="50" id="z4Q-oB-ZZB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="wiF-v4-cDs"/>
+                    <connections>
+                        <outlet property="dateTaskLabel" destination="Sp0-Se-k84" id="wyv-1u-zJU"/>
+                        <outlet property="descriptionTaskLabel" destination="beo-HY-9zp" id="X0b-Sr-nAA"/>
+                        <outlet property="nameTaskLabel" destination="lvM-7W-00n" id="1yf-6h-bhx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HWE-lC-Gi1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1310" y="60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I21-ml-h6k">
