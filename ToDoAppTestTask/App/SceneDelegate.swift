@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  ToDoAppTestTask
-//
-//  Created by Elena Igumenova on 01.05.2021.
-//
 
 import UIKit
 

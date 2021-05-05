@@ -2,9 +2,9 @@
 import Foundation
 
 struct Task: Decodable {
-    let id: Int
-    let dateStart: String
-    let dateFinish: String
-    let name: String
-    let description: String
+    let id: Int?
+    var dateStart: String
+    let dateFinish: String?
+    var name: String
+    var description: String
 }

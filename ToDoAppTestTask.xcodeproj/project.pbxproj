@@ -15,6 +15,9 @@
 		8453E956263F214C00101DDE /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E955263F214C00101DDE /* DetailsViewController.swift */; };
 		8453E959263F29A700101DDE /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E958263F29A700101DDE /* DateConverter.swift */; };
 		8453E95E263F48EB00101DDE /* Hours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E95D263F48EB00101DDE /* Hours.swift */; };
+		8453E96426403C4500101DDE /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E96326403C4500101DDE /* NewTaskViewController.swift */; };
+		8453E9682640A0F700101DDE /* NewTaskDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E9672640A0F700101DDE /* NewTaskDelegateProtocol.swift */; };
+		8453E96F2641C48F00101DDE /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453E96E2641C48F00101DDE /* ColumnFlowLayout.swift */; };
 		8462486E263D60B100C8FDE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462486D263D60B100C8FDE9 /* AppDelegate.swift */; };
 		84624870263D60B100C8FDE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462486F263D60B100C8FDE9 /* SceneDelegate.swift */; };
 		84624872263D60B100C8FDE9 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84624871263D60B100C8FDE9 /* TaskViewController.swift */; };
@@ -32,6 +35,9 @@
 		8453E955263F214C00101DDE /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		8453E958263F29A700101DDE /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		8453E95D263F48EB00101DDE /* Hours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hours.swift; sourceTree = "<group>"; };
+		8453E96326403C4500101DDE /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		8453E9672640A0F700101DDE /* NewTaskDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskDelegateProtocol.swift; sourceTree = "<group>"; };
+		8453E96E2641C48F00101DDE /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		8462486A263D60B100C8FDE9 /* ToDoAppTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoAppTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8462486D263D60B100C8FDE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8462486F263D60B100C8FDE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		8453E9662640A0B200101DDE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8453E9672640A0F700101DDE /* NewTaskDelegateProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		84624861263D60B100C8FDE9 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +118,7 @@
 				84624886263D63AF00C8FDE9 /* Controllers */,
 				8453E933263D871300101DDE /* Services */,
 				8453E945263DF04700101DDE /* Extension */,
+				8453E9662640A0B200101DDE /* Protocols */,
 				84624876263D60B500C8FDE9 /* Assets.xcassets */,
 				8462487B263D60B500C8FDE9 /* Info.plist */,
 				8453E94A263DF81100101DDE /* TaskData.json */,
@@ -124,6 +139,7 @@
 			children = (
 				8453E92D263D7EA400101DDE /* Cell */,
 				84624889263D63DD00C8FDE9 /* Storyboards */,
+				8453E96E2641C48F00101DDE /* ColumnFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +149,7 @@
 			children = (
 				84624871263D60B100C8FDE9 /* TaskViewController.swift */,
 				8453E955263F214C00101DDE /* DetailsViewController.swift */,
+				8453E96326403C4500101DDE /* NewTaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,9 +246,12 @@
 				8453E930263D7EDF00101DDE /* CalendarCollectionViewCell.swift in Sources */,
 				8453E93F263DD25800101DDE /* Bundle.swift in Sources */,
 				8453E959263F29A700101DDE /* DateConverter.swift in Sources */,
+				8453E96426403C4500101DDE /* NewTaskViewController.swift in Sources */,
 				84624872263D60B100C8FDE9 /* TaskViewController.swift in Sources */,
 				8453E956263F214C00101DDE /* DetailsViewController.swift in Sources */,
+				8453E9682640A0F700101DDE /* NewTaskDelegateProtocol.swift in Sources */,
 				8462486E263D60B100C8FDE9 /* AppDelegate.swift in Sources */,
+				8453E96F2641C48F00101DDE /* ColumnFlowLayout.swift in Sources */,
 				84624870263D60B100C8FDE9 /* SceneDelegate.swift in Sources */,
 				8453E95E263F48EB00101DDE /* Hours.swift in Sources */,
 				8453E93B263DCE5F00101DDE /* Task.swift in Sources */,

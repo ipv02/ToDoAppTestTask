@@ -1,5 +1,4 @@
 
-
 import Foundation
 
 class DateConverter {
@@ -12,7 +11,6 @@ class DateConverter {
     
     func getTaskHour(unixCode: Double) -> String {
         
-        //let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
         dateFormatter.dateFormat = "HH:mm"
         
@@ -24,7 +22,6 @@ class DateConverter {
     
     func getTaskDay(unixCode: Double) -> String {
         
-        //let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
         dateFormatter.dateFormat = "d"
         
@@ -34,6 +31,3 @@ class DateConverter {
         return dateString
     }
 }
-
-
-//"yyyy-MM-dd HH:mm"

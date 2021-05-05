@@ -3,14 +3,14 @@ import UIKit
 
 final class DetailsViewController: UIViewController {
     
-    let dateConverter = DateConverter.shared
-    
     @IBOutlet weak var nameTaskLabel: UILabel!
     @IBOutlet weak var dateTaskLabel: UILabel!
     @IBOutlet weak var descriptionTaskLabel: UILabel!
     
     var detailsTask: Task?
     var tableViewHour: String?
+    
+    private let dateConverter = DateConverter.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
